@@ -1,0 +1,3 @@
+<? 
+$email = 'rtvafk@i.ua';
+?>

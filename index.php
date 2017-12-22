@@ -20,5 +20,19 @@
 <input type="textarea" name = "subject" required>
 
 </br>
+
 <input type="submit" name = "submit" >
 </form>
+  <p><a href="export.php">Посмотреть записи из БД</a></p>
+<?
+include ('DB.php');
+include ('config.php');
+//добавить отправление на имейл
+if($_POST['submit']){
+$db = new DB;
+$name = $_POST['user'];
+$email = $_POST['email'];
+$homepage = $_POST['homepage'];
+$subject = $_POST['subject'];
+$db->add($name,$email,$subject,$homepage);}
+?>
