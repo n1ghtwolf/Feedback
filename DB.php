@@ -27,7 +27,12 @@ Class DB {
 	}
 	public  function export(){
        echo "<pre>";
-       var_dump($this->pdo->query("SELECT * FROM `feedback`")->fetchAll());
+     //  var_dump($this->pdo->query("SELECT * FROM `feedback`")->fetch());
+        $view=$this->pdo->query("SELECT * FROM `feedback`")->fetchAll();
+        print_r($view);
+//        while(!$view){
+//            print_r($view);
+//        }
         echo "</pre>";
         
 	//$get = pdo->query("SELECT * FROM `feedback`");
