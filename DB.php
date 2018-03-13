@@ -2,7 +2,8 @@
 Class DB {
 	
 
-   public $pdo;
+   protected $pdo;
+   public $rows;
    public function __construct(){
    
   
@@ -18,15 +19,22 @@ Class DB {
 	{
 	 $ip =$_SERVER['REMOTE_ADDR'];
 	 $browser =$_SERVER['HTTP_USER_AGENT'];
-
+	 
 		$this->pdo->query("INSERT INTO `feedback` (`name`, `email`,`homepage`,`text`,`ip`,`browser`) VALUES ('{$name}','{$email}','{$homepage}','{$text}','{$ip}','{$browser}')");
 	}
-	function ClearTable(){
+	public function ClearTable(){
 	$this->pdo->query("DELETE FROM `feedback`");
 	}
-	function export(){
-	$this->pdo->query("SELECT * FROM `feedback`");
-	while($this->pdo->fetch()){
-	echo "<td>".$rows['name']."</td>";
+	public  function export(){
+       echo "<pre>";
+       var_dump($this->pdo->query("SELECT * FROM `feedback`")->fetchAll());
+        echo "</pre>";
+        
+	//$get = pdo->query("SELECT * FROM `feedback`");
+	//$data = $get->fetchall();
+	//var_dump($data);
+//	while($this->pdo->fetch()){
+//	echo "<td>".$rows['name']."</td>";
 	}
-}}
+}
+//}
