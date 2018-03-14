@@ -3,7 +3,7 @@ class Config {
 	
 protected $email;	
 
-public static function GetDirektorEmail()
+public static function GetHeadEmail()
 {
 	$email = 'rtvafk@i.ua';
 	return $email;

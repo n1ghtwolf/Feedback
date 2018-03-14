@@ -1,11 +1,12 @@
 <head>
-    <title> Feedback form </title>
+    <title> feedback form </title>
+    <script src="skripts.js"></script>
 </head>
 <body>
 <form action="index.php" method="POST" autocomplete="off">
     <label> Назовите себя </label>
     </br>
-    <input type="text" name="user" required>
+    <input type="text" name="user" title="Поле обязательно для заполнения" >
     </br>
     <label> Ваш e-mail </label>
     </br>
@@ -19,8 +20,10 @@
     </br>
     <input type="textarea" name="subject" required>
     </br>
+    <label> Вы можете прикрепить текстовый файл или изображение </label>
+    <input type="file" name="file" >
+    </br>
     <label> Captcha </label>
-
     <input type="text" name="captchaResponse" hidden >
     </br>
     <input type="text" name="captcha" required>

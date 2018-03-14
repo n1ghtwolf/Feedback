@@ -5,10 +5,10 @@ Class DB {
    protected $pdo;
    public $rows;
    public function __construct(){
-   
+
   
-	$this->pdo = new PDO("mysql:host=localhost;dbname=Feedback;charset=utf8", 'root','', 
-	array( 
+	$this->pdo = new PDO("mysql:host=localhost;dbname=Feedback;charset=utf8", 'root','',
+	array(
 		PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         PDO::ATTR_EMULATE_PREPARES   => false)
@@ -26,20 +26,16 @@ Class DB {
 	$this->pdo->query("DELETE FROM `feedback`");
 	}
 	public  function export(){
-       echo "<pre>";
-     //  var_dump($this->pdo->query("SELECT * FROM `feedback`")->fetch());
+
         $view=$this->pdo->query("SELECT * FROM `feedback`")->fetchAll();
-        print_r($view);
-//        while(!$view){
-//            print_r($view);
-//        }
-        echo "</pre>";
-        
-	//$get = pdo->query("SELECT * FROM `feedback`");
-	//$data = $get->fetchall();
-	//var_dump($data);
-//	while($this->pdo->fetch()){
-//	echo "<td>".$rows['name']."</td>";
+        foreach ($view as $res){
+            echo "<tr><td>".$res['name']."</td>";
+            echo "<td>".$res['text']."</td>";
+            echo "<td>".$res['email']."</td>";
+            echo "<td>".$res['ip']."</td>";
+            echo "<td>".$res['browser']."</td>";
+            echo "<td>".$res['homepage']."</td></tr>";
+        }
+
 	}
 }
-//}
