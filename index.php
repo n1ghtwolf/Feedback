@@ -1,9 +1,12 @@
 <head>
     <title> feedback form </title>
-    <script src="skripts.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+<!--    <script src="jv/dist/jquery.validate.js"></script>-->
+<!--    <script src="skripts.js">  </script>-->
+<!--    <script src="jv/dist/jquery.validate.js"></script>-->
 </head>
 <body>
-<form action="index.php" method="POST" autocomplete="off">
+<form action="index.php" method="POST" autocomplete="off" id="form">
     <label> Назовите себя </label>
     </br>
     <input type="text" name="user" title="Поле обязательно для заполнения" >
@@ -26,11 +29,14 @@
     <label> Captcha </label>
     <input type="text" name="captchaResponse" hidden >
     </br>
-    <input type="text" name="captcha" required>
+    <input type="text" name="captcha" >
     </br>
     <input type="submit" name="submit">
 </form>
 <p><a href="export.php">Посмотреть записи из БД</a></p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="jv/dist/jquery.validate.js"></script>
+<script src="scripts.js">  </script>
 <?
 include('DB.php');
 include('config.php');
@@ -41,6 +47,8 @@ if ($_POST['submit']) {
     $email = $_POST['email'];
     $homepage = $_POST['homepage'];
     $subject = $_POST['subject'];
+
     $db->add($name, $email, $subject, $homepage);
-}
+    }
+
 ?>

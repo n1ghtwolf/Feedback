@@ -1,9 +1,8 @@
 <? 
 Class DB {
-	
 
    protected $pdo;
-   public $rows;
+
    public function __construct(){
 
   
@@ -34,7 +33,8 @@ Class DB {
             echo "<td>".$res['email']."</td>";
             echo "<td>".$res['ip']."</td>";
             echo "<td>".$res['browser']."</td>";
-            echo "<td>".$res['homepage']."</td></tr>";
+            echo "<td>".$res['homepage']."</td>";
+            echo "<td>".$res['date']."</td></tr>";
         }
 
 	}

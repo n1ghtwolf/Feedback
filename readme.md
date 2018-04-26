@@ -6,8 +6,6 @@
 
 ● ООП
 
-● PSR​2 (http://www.php​fig.org/psr/psr​2/) и PSR​4 (http://www.php​fig.org/psr/psr​4/)
-
 ● Apache 2.4 / Nginx
 
 ● PDO для работы с MySQL
