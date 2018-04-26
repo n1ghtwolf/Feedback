@@ -5,7 +5,7 @@ protected $email;
 
 public static function GetHeadEmail()
 {
-	$email = 'rtvafk@i.ua';
+	$email = 'example@gmail.com';
 	return $email;
 }
 
