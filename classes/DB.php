@@ -14,7 +14,7 @@ Class DB {
 		);
    }
 	
-	function add ($name,$email,$text,$homepage='')
+	public function add ($name,$email,$text,$homepage='')
 	{
 	 $ip =$_SERVER['REMOTE_ADDR'];
 	 $browser =$_SERVER['HTTP_USER_AGENT'];
