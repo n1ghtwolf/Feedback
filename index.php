@@ -49,7 +49,7 @@
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div>
-                    <button type="submit" class="btn btn-primary">Отправитьп</button>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
                 </form>
                 <p><a href="pages/export.php">Посмотреть записи из БД</a></p>
             </div>
